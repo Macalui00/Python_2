@@ -27,21 +27,21 @@ def comprobarNombreNuevo(resp,nuevo_nombre):
         resp = comprobarResp(resp, nuevo_nombre)
     return nuevo_nombre
 
-#Para revisar si existe el archivo, tendria que modificar varias funciones...
-# def comprobarExistencia(nombre):
-#     if not(os.path.exists(nombre)):
-#         print(f"No existe un archivo con el nombre {nombre} en la ruta actual")
-#         nombre = input("Ingrese el nombre de la carpeta que quiere cambiar: ")
-#         while not(os.path.exists(nombre)):
-#             print(f"No existe un archivo con el nombre {nombre} en la ruta actual")
-#             nombre = input("Ingrese el nombre de la carpeta que quiere cambiar: ")
-#     return nombre
+#Para revisar si existe el archivo
+def comprobarExistencia(nombre):
+    if not(os.path.exists(nombre)):
+        print(f"No existe un archivo con el nombre {nombre} en la ruta actual")
+        nombre = input("Ingrese el nombre de la carpeta que quiere cambiar: ")
+        while not(os.path.exists(nombre)):
+            print(f"No existe un archivo con el nombre {nombre} en la ruta actual")
+            nombre = input("Ingrese el nombre de la carpeta que quiere cambiar: ")
+    return nombre
 
 viejo_nombre = input("Ingrese el nombre de la carpeta que quiere cambiar: ")
-# viejo_nombre = comprobarExistencia(viejo_nombre)
-resp = input(f"El nombre ingresado es el siguiente: {viejo_nombre} esta ok? S/N ")
-resp = comprobarResp(resp, viejo_nombre)
-viejo_nombre = comprobarNombreViejo(resp, viejo_nombre)
+viejo_nombre = comprobarExistencia(viejo_nombre)
+# resp = input(f"El nombre ingresado es el siguiente: {viejo_nombre} esta ok? S/N ")
+# resp = comprobarResp(resp, viejo_nombre)
+# viejo_nombre = comprobarNombreViejo(resp, viejo_nombre)
 
 nuevo_nombre = input("Ingrese el nuevo nombre de la carpeta: ")
 resp = input(f"El nombre ingresado es el siguiente: {nuevo_nombre} esta ok? S/N")
