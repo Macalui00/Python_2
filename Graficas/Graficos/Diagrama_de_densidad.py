@@ -16,7 +16,7 @@ axes[0,0].set_title("Diagrama de una dimensión",color="orange",fontweight="bold
 kdeplot(tips.total_bill, ax=axes[0,0], color="orange")
 
 #Este tipo de gráficas también se puede obtener en dos dimensiones, para lo que solamente se ha de inyectar dos columnas de datos en la función
-kdeplot(tips.tip,tips.total_bill, ax=axes[0,1], color="orange")
+kdeplot(tips.tip, tips.total_bill, ax=axes[0,1], color="orange")
 axes[0,1].set_title("Diagrama de dos dimensiones",color="orange",fontweight="bold",fontsize=14)
 
 axes[0,1].set_xlabel('total_bill', color="orange",fontweight="bold",fontsize=14)
@@ -54,8 +54,6 @@ for n in range(0,2):
         axes[n,m].patch.set_facecolor('xkcd:light grey')
         #Seteo la opacidad del fondo del grafico
         axes[n,m].patch.set_alpha(0.3)
-
-
 
 #Fondo general de color gris oscuro
 plt.figure(1).patch.set_facecolor('xkcd:dark grey')
